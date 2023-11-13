@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HowLongSince_AndrewLukashchuk.SettingsPage"
+             Title="SettingsPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+
+        <Grid Grid.Row="0" Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0" BackgroundColor="LightBlue" HeightRequest="20" Margin="10" Text="Back" TextColor="CadetBlue" HorizontalOptions="StartAndExpand" VerticalOptions="Start" x:Name="backButton" Clicked="backButton_Clicked"/>
+            <Label Grid.Column="1" Text="User" VerticalOptions="Center" Padding="0,0,50,0" HorizontalOptions="EndAndExpand" x:Name="userLabel"/>
+            <ImageButton Grid.Column="1" Source="man.png" HorizontalOptions="EndAndExpand" HeightRequest="10"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Padding="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Grid.Row="0" Source="user.png" HeightRequest="30" HorizontalOptions="CenterAndExpand" Margin="50,0,20,0"/>
+            <Button Grid.Column="1" Grid.Row="0" Text="Personal information" BackgroundColor="Transparent" Background="Transparent" TextColor="Black" x:Name="personalInformationButton" Clicked="personalInformationButton_Clicked" />
+
+            <!-- Add the horizontal line (underscore) below the Label -->
+            <BoxView Grid.Column="1" Grid.Row="1" BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="-50,5,0,0" WidthRequest="230"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Padding="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Grid.Row="0" Source="theme.png" HeightRequest="30" HorizontalOptions="CenterAndExpand" Margin="50,0,20,0"/>
+            <Button Grid.Column="1" Grid.Row="0" Text="App Theme" BackgroundColor="Transparent" Background="Transparent" TextColor="Black" x:Name="appThemeButton" Clicked="appThemeButton_Clicked"/>
+
+            <!-- Add the horizontal line (underscore) below the Label -->
+            <BoxView Grid.Column="1" Grid.Row="1" BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="-45,5,0,0" WidthRequest="190"/>
+        </Grid>
+
+        <Grid Grid.Row="3" Padding="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Grid.Row="0" Source="watercolor.png" HeightRequest="30" HorizontalOptions="CenterAndExpand" Margin="60,0,20,0"/>
+            <Button Grid.Column="1" Grid.Row="0" Text="App Color" BackgroundColor="Transparent" Background="Transparent" TextColor="Black" x:Name="appColorButton" Clicked="appColorButton_Clicked"/>
+
+            <!-- Add the horizontal line (underscore) below the Label -->
+            <BoxView Grid.Column="1" Grid.Row="1" BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="-45,5,0,0" WidthRequest="190"/>
+        </Grid>
+
+        <Grid Grid.Row="4" Padding="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ImageButton Grid.Column="0" Grid.Row="0" Source="font.png" HeightRequest="15" HorizontalOptions="CenterAndExpand" Margin="60,0,20,0"/>
+            <Button Grid.Column="1" Grid.Row="0" Text="Fonts" BackgroundColor="Transparent" Background="Transparent" TextColor="Black" x:Name="fontButton" Clicked="fontButton_Clicked"/>
+
+            <!-- Add the horizontal line (underscore) below the Label -->
+            <BoxView Grid.Column="1" Grid.Row="1" BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="-60,5,0,0" WidthRequest="170"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>

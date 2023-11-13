@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HowLongSince_AndrewLukashchuk.ActivityPage"
+             Title="ActivityPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Padding="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+          
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Button Grid.Column="0" BackgroundColor="LightBlue" HeightRequest="20" Margin="10" Text="Back" TextColor="CadetBlue" VerticalOptions="Start" Clicked="BackButton_Clicked"/>
+            <Image Grid.Column="1" Source="{Binding iconName}" HeightRequest="50" Margin="20,0,0,0" x:Name="iconImage"/>
+            <Label Grid.Row="0" Grid.Column="2" Text="{Binding title}" FontSize="30" Padding="20,0,0,0" x:Name="titleLabel"/>
+            <Label Grid.Row="1" Grid.Column="2" Text="{Binding timeDifference}" Padding="20,0,0,0" VerticalOptions="StartAndExpand" TextColor="Grey" x:Name="timeDifferenceLabel"/>
+            <ImageButton Grid.Row="0" Grid.Column="3" Source="settings.png" HeightRequest="50" x:Name="settingButton" Clicked="settingButton_Clicked"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Padding="20,30,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Button Grid.Column="0" CornerRadius="20" WidthRequest="100" Text="Done!" BackgroundColor="Green" x:Name="doneButton" Clicked="doneButton_Clicked"/>
+            <Button Grid.Column="1" CornerRadius="20" WidthRequest="100" Text="New" BackgroundColor="Blue" Padding="0,0,0,0" x:Name="newButton" Clicked="newButton_Clicked"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Padding="20,60,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Text="History" FontSize="25" TextColor="Grey" x:Name="test"/>
+            <Label Grid.Row="1" Grid.Column="0" Text="0" FontSize="30" x:Name="historyCountLabel"/>
+            <Button Grid.Row="0" Grid.Column="1" CornerRadius="20" WidthRequest="100" Text="Reset" HorizontalOptions="EndAndExpand" BackgroundColor="DarkRed" x:Name="resetButton" Clicked="resetButton_Clicked"/>
+        </Grid>
+
+        <Grid Grid.Row="3" Padding="5,35,10,20">
+            <ListView x:Name="activitiesListView" ItemTapped="activitiesListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Column="0" Source="{Binding starColor}" HeightRequest="20" VerticalOptions="CenterAndExpand" x:Name="something"/>
+                                <Label Grid.Column="1" Text="{Binding lastTimeModified, StringFormat='{0:HH:mm, dd-MM-yyyy}'}" FontSize="25" Padding="20,0,0,0"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+    </Grid>
+</ContentPage>

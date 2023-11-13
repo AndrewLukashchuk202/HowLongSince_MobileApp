@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HowLongSince_AndrewLukashchuk.NewEvent"
+             Title="NewEvent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0" BackgroundColor="LightBlue" HeightRequest="20" Margin="10" Text="Back" TextColor="CadetBlue" HorizontalOptions="StartAndExpand" VerticalOptions="Start" Clicked="Button_Clicked" x:Name="backButton"/>
+
+            <Frame Grid.Column="1" CornerRadius="100" HeightRequest="100" Margin="20" HorizontalOptions="CenterAndExpand" WidthRequest="100">
+                <ImageButton Source="plus_icon.png" Clicked="ChooseIconButton_Clicked" x:Name="chosenIcon"/>
+            </Frame>
+
+            <Label Grid.Column="2" Text="Choose Icon or leave it as a default" VerticalTextAlignment="Center" x:Name="explanationLabel"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Padding="10,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Column="0" Text="Title:" FontAttributes="Bold" FontSize="25" Padding="20,40,50,0" HorizontalOptions="StartAndExpand" x:Name="titleLabel"/>
+            <Editor Grid.Column="1" WidthRequest="250" VerticalOptions="EndAndExpand" x:Name="titleEditor"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Padding="20,60,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Column="0" Text="Date and Time:" HorizontalOptions="StartAndExpand" FontAttributes="Bold" FontSize="25" Padding="0,0,15,0" x:Name="dateTimeLabel"/>
+            <DatePicker Grid.Column="1" HorizontalOptions="CenterAndExpand" Margin="0,0,15,0" x:Name="myDatePicker"/>
+            <TimePicker Grid.Column="2" x:Name="myTimePicker"/>
+        </Grid>
+
+        <Label Grid.Row="3" Text="Description:" FontAttributes="Bold" FontSize="25" Padding="20,60,0,0" x:Name="descriptionLabel"/>
+        <Editor Grid.Row="4" Margin="20" HeightRequest="250" x:Name="descriptionEditor"/>
+
+        <Button Grid.Row="5" HeightRequest="20" WidthRequest="120" CornerRadius="20" Text="Done" BackgroundColor="ForestGreen" Clicked="DoneButton_Clicked_1" x:Name="doneButton"/>
+    </Grid>
+</ContentPage>

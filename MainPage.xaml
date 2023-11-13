@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HowLongSince_AndrewLukashchuk.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" HeightRequest="80" Padding="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="man.png" Grid.Column="0" HorizontalOptions="StartAndExpand"/>
+            <Label Text="User" Grid.Column="1" VerticalOptions="Center" Padding="10" x:Name="userMainPageLabel"/>
+            <ImageButton Grid.Column="2" Source="settings.png" HorizontalOptions="EndAndExpand" HeightRequest="5" x:Name="settingsButton" Clicked="settingsButton_Clicked"/>
+        </Grid>
+
+        <Grid Grid.Row="1" HeightRequest="120" Padding="10,50,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Label Grid.Row="0" Grid.Column="0" Text="Activity" FontSize="25" TextColor="Grey"/>
+            <Picker Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" x:Name="pickerViewMode" Title="Sort By ▼" FontSize="15" SelectedIndexChanged="pickerViewMode_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>All</x:String>
+                    <x:String>Monthly</x:String>
+                    <x:String>Daily</x:String>
+                </Picker.Items>
+            </Picker>
+            <!--<Button Grid.Row="0" Grid.Column="1" WidthRequest="100" HeightRequest="5" HorizontalOptions="EndAndExpand" CornerRadius="20" Background="YellowGreen" Text="All    ▼" FontSize="15" x:Name="viewMode" Clicked="viewMode_Clicked"/> -->
+            <Label Grid.Row="1" Text="0" FontSize="30" x:Name="labelActivity"/>
+        </Grid>
+
+
+        <Grid Grid.Row="2" Padding="5,35,10,20">
+            <ListView x:Name="eventsView" ItemTapped="eventsView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="0,10,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Grid.Row="0" Grid.Column="0" Source="{Binding iconName}" HeightRequest="50" VerticalOptions="CenterAndExpand"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding title}" FontSize="25" TextColor="{Binding color}" Padding="20,0,0,0" x:Name="titleLabel"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding timeDifference}" FontSize="15" TextColor ="Grey" Padding="20,0,0,0"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <ImageButton Grid.Row="3" HorizontalOptions="CenterAndExpand" Source="plus.png" HeightRequest="50" x:Name="addNewEvent" Clicked="addNewEvent_Clicked"/>
+    </Grid>
+
+</ContentPage>

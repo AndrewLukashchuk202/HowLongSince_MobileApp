@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HowLongSince_AndrewLukashchuk.IconsPage"
+             Title="IconsPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" HorizontalOptions="CenterAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ImageButton Grid.Column="0" Source="console.png" HeightRequest="100" x:Name="console" Clicked="icon_Clicked" AutomationId="console.png"/>
+            <ImageButton Grid.Column="1" Source="friends.png" HeightRequest="100" x:Name="friends" Clicked="icon_Clicked" AutomationId="friends.png"/>
+            <ImageButton Grid.Column="2" Source="lunch.png" HeightRequest="100" x:Name="lunch" Clicked="icon_Clicked" AutomationId="lunch.png"/>
+        </Grid>
+
+
+        <Grid Grid.Row="1" HorizontalOptions="CenterAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <ImageButton Grid.Column="0" Source="sleeping.png" HeightRequest="100" x:Name="sleeping" Clicked="icon_Clicked" AutomationId="sleeping.png"/>
+            <ImageButton Grid.Column="1" Source="sports.png" HeightRequest="100" x:Name="sports" Clicked="icon_Clicked" AutomationId="sports.png"/>
+            <ImageButton Grid.Column="2" Source="working.png" HeightRequest="100" x:Name="working" Clicked="icon_Clicked" AutomationId="working.png"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>
