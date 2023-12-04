@@ -24,7 +24,7 @@
             <ImageButton Grid.Column="1" Source="man.png" HorizontalOptions="EndAndExpand" HeightRequest="10"/>
         </Grid>
 
-        <Grid Grid.Row="1" Padding="40">
+        <Grid Grid.Row="1" Padding="40" HorizontalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -42,7 +42,7 @@
             <BoxView Grid.Column="1" Grid.Row="1" BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="-50,5,0,0" WidthRequest="230"/>
         </Grid>
 
-        <Grid Grid.Row="2" Padding="40">
+        <Grid Grid.Row="2" Padding="40" HorizontalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -60,7 +60,7 @@
             <BoxView Grid.Column="1" Grid.Row="1" BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="-45,5,0,0" WidthRequest="190"/>
         </Grid>
 
-        <Grid Grid.Row="3" Padding="40">
+        <Grid Grid.Row="3" Padding="40" HorizontalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -78,7 +78,7 @@
             <BoxView Grid.Column="1" Grid.Row="1" BackgroundColor="Black" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Margin="-45,5,0,0" WidthRequest="190"/>
         </Grid>
 
-        <Grid Grid.Row="4" Padding="40">
+        <Grid Grid.Row="4" Padding="40" HorizontalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>

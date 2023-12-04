@@ -63,7 +63,8 @@
         </Grid>
 
         <Grid Grid.Row="3" Padding="5,35,10,20">
-            <ListView x:Name="activitiesListView" ItemTapped="activitiesListView_ItemTapped">
+            
+            <ListView VerticalScrollBarVisibility="Always" x:Name="activitiesListView" ItemTapped="activitiesListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

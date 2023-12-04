@@ -10,9 +10,6 @@ namespace HowLongSince_AndrewLukashchuk
     /// </summary>
     public partial class MainPage : ContentPage
     {
-
-        //Creating an instance of newEvent data type to get access to this class methods and properties
-        NewEvent newEvent = new NewEvent();
         //Creating a list to pass activities to that list to alter it without modifying an original one from newEvent class
         public ObservableCollection<Activity> allActivitiesList = new ObservableCollection<Activity>();
         //Current system date and time to compare this value with provided user's date time
@@ -32,7 +29,7 @@ namespace HowLongSince_AndrewLukashchuk
        /// <param name="e"></param>
         private async void addNewEvent_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(newEvent); 
+            await Navigation.PushAsync(new NewEvent()); 
         }
 
         /// <summary>
@@ -61,6 +58,9 @@ namespace HowLongSince_AndrewLukashchuk
         /// </summary>
         public void DisplayEvents()
         {
+            //Creating an instance of newEvent data type to get access to this class methods and properties
+            NewEvent newEvent = new NewEvent();
+
             newEvent.LoadEventsData();
             newEvent.LoadEventsHistoryData();
 
